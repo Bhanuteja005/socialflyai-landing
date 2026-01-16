@@ -9,7 +9,7 @@ import { Button } from "../ui/button";
 import Ripple from "../ui/ripple";
 
 const SOCIAL_PLATFORMS = [
-    { icon: Icons.youtube, position: "left-3", size: "small", iconSize: "small", className: "hidden lg:flex", color: "text-blue-600" },
+    { icon: Icons.youtube, position: "left-3", size: "small", iconSize: "small", className: "hidden lg:flex", color: "text-red-600" },
     { icon: Icons.tiktok, position: "left-2", size: "medium", iconSize: "medium", color: "text-black" },
     { icon: Icons.insta, position: "left-1", size: "large", iconSize: "large", color: "text-pink-600" },
     { icon: Icons.linkedin, position: "right-1", size: "large", iconSize: "large", color: "text-blue-600" },
@@ -84,7 +84,7 @@ const Integration = () => {
         <div className="relative flex flex-col items-center justify-center w-full py-20 overflow-x-hidden">
 
              <Container>
-                <div className="flex flex-col items-center text-center max-w-2xl mx-auto">
+                <div className="flex flex-col items-center text-center max-w-2xl mx-auto mb-12">
                     <h2 className="text-2xl md:text-4xl lg:text-5xl font-heading font-medium !leading-snug mt-6 text-gray-900">
                         Social Media Integration 
                     </h2>

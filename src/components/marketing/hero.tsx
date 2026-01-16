@@ -93,7 +93,7 @@ const Hero = () => {
                          <Icons.threads className={`${innerIconClass} text-black`} />
                     </div>
                 </OrbitingCircles>
-                <OrbitingCircles iconSize={innerIconSize} radius={innerRadius} reverse speed={1.2} delay={10} path={false}>
+                <OrbitingCircles iconSize={innerIconSize} radius={innerRadius} reverse speed={1.2} delay={8} path={false}>
                     <div className={`bg-white rounded-full shadow-lg border border-gray-100 ${innerPadding}`}>
                          <Icons.linkedin className={`${innerIconClass} text-blue-700`} />
                     </div>
@@ -125,9 +125,14 @@ const Hero = () => {
                         <Icons.linkedin className={`${outerIconClass} text-blue-700`} />
                     </div>
                 </OrbitingCircles>
-                <OrbitingCircles iconSize={outerIconSize} radius={outerRadius} speed={0.8} delay={15} path={false}>
+                <OrbitingCircles iconSize={outerIconSize} radius={outerRadius} reverse speed={0.8} delay={15} path={false}>
                     <div className={`bg-white rounded-full shadow-lg border border-gray-100 ${outerPadding}`}>
                         <Icons.facebook className={`${outerIconClass} text-blue-600`} />
+                    </div>
+                </OrbitingCircles>
+                <OrbitingCircles iconSize={outerIconSize} radius={outerRadius} speed={0.8} delay={20} path={false}>
+                    <div className={`bg-white rounded-full shadow-lg border border-gray-100 ${outerPadding}`}>
+                        <Icons.instagram className={`${outerIconClass} text-pink-600`} />
                     </div>
                 </OrbitingCircles>
                 </>
