@@ -55,29 +55,29 @@ const Hero = () => {
     };
 
     return (
-        <div className="relative flex flex-col items-center justify-center w-full py-0 lg:py-4 min-h-[45vh] lg:min-h-[55vh] overflow-hidden bg-transparent">
+        <div className="relative flex flex-col items-center justify-center w-full py-0 lg:py-4 min-h-[80vh] lg:min-h-[90vh] overflow-visible bg-transparent">
             
             {/* Background Concentric Circles (Visible Orbits) */}
             <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
-                <div className="rounded-full border border-gray-200/60 w-[380px] h-[380px]" />
-                <div className="absolute rounded-full border border-gray-200/60 w-[620px] h-[620px]" />
+                <div className="rounded-full border border-gray-200/60 w-[640px] h-[640px]" />
+                <div className="absolute rounded-full border border-gray-200/60 w-[1000px] h-[1000px]" />
             </div>
 
             {/* Orbiting Elements */}
             <div className="absolute inset-0 flex items-center justify-center pointer-events-none mb-0 lg:mb-0">
                 
                 {/* Inner Ring */}
-                <OrbitingCircles iconSize={40} radius={190} speed={1.2} delay={0} path={false}>
+                <OrbitingCircles iconSize={40} radius={320} speed={1.2} delay={0} path={false}>
                     <div className="p-3 bg-white rounded-full shadow-lg border border-gray-100">
                          <Icons.insta className="w-6 h-6 text-pink-600" />
                     </div>
                 </OrbitingCircles>
-                <OrbitingCircles iconSize={40} radius={190} reverse speed={1.2} delay={10} path={false}>
+                <OrbitingCircles iconSize={40} radius={320} reverse speed={1.2} delay={10} path={false}>
                     <div className="p-3 bg-white rounded-full shadow-lg border border-gray-100">
                          <Icons.facebook className="w-6 h-6 text-blue-600" />
                     </div>
                 </OrbitingCircles>
-                 <OrbitingCircles iconSize={40} radius={190} speed={1.2} delay={20} path={false}>
+                 <OrbitingCircles iconSize={40} radius={320} speed={1.2} delay={20} path={false}>
                      <div className="p-3 bg-white rounded-full shadow-lg border border-gray-100">
                          <Icons.linkedin className="w-6 h-6 text-blue-700" />
                     </div>
@@ -85,17 +85,17 @@ const Hero = () => {
 
 
                 {/* Outer Ring */}
-                <OrbitingCircles iconSize={50} radius={310} speed={0.8} delay={0} path={false}>
+                <OrbitingCircles iconSize={50} radius={480} speed={0.8} delay={0} path={false}>
                     <div className="p-4 bg-white rounded-full shadow-lg border border-gray-100">
                          <Icons.youtube className="w-8 h-8 text-red-600" />
                     </div>
                 </OrbitingCircles>
-                <OrbitingCircles iconSize={50} radius={310} reverse speed={0.8} delay={15} path={false}>
+                <OrbitingCircles iconSize={50} radius={480} reverse speed={0.8} delay={15} path={false}>
                      <div className="p-4 bg-white rounded-full shadow-lg border border-gray-100">
                          <Icons.x className="w-8 h-8 text-black" />
                     </div>
                 </OrbitingCircles>
-                <OrbitingCircles iconSize={50} radius={310} speed={0.8} delay={30} path={false}>
+                <OrbitingCircles iconSize={50} radius={480} speed={0.8} delay={30} path={false}>
                     <div className="p-4 bg-white rounded-full shadow-lg border border-gray-100">
                         <Icons.instagram className="w-8 h-8 text-pink-600" />
                     </div>
@@ -109,7 +109,7 @@ const Hero = () => {
                 <div className="flex flex-col items-center justify-center text-center gap-y-6">
                     <Container delay={0.1}>
                         <div className="relative">
-                            <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold text-center !leading-tight text-gray-900 tracking-tight">
+                            <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-center !leading-tight text-gray-900 tracking-tight">
                                 Smart Social Media <br/>
                                 <span className="text-green-600">Management.</span>
                             </h1>
