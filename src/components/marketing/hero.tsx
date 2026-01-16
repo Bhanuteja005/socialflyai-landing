@@ -95,12 +95,12 @@ const Hero = () => {
                 </OrbitingCircles>
                 <OrbitingCircles iconSize={innerIconSize} radius={innerRadius} reverse speed={1.2} delay={10} path={false}>
                     <div className={`bg-white rounded-full shadow-lg border border-gray-100 ${innerPadding}`}>
-                         <Icons.facebook className={`${innerIconClass} text-blue-600`} />
+                         <Icons.linkedin className={`${innerIconClass} text-blue-700`} />
                     </div>
                 </OrbitingCircles>
                  <OrbitingCircles iconSize={innerIconSize} radius={innerRadius} speed={1.2} delay={20} path={false}>
                      <div className={`bg-white rounded-full shadow-lg border border-gray-100 ${innerPadding}`}>
-                         <Icons.linkedin className={`${innerIconClass} text-blue-700`} />
+                         <Icons.facebook className={`${innerIconClass} text-blue-600`} />
                     </div>
                 </OrbitingCircles>
                 </>
