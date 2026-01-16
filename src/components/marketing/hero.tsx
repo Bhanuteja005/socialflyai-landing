@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { 
@@ -22,6 +22,25 @@ const Hero = () => {
     const [email, setEmail] = useState("");
     const [loading, setLoading] = useState(false);
     const [message, setMessage] = useState("");
+    const [isLarge, setIsLarge] = useState(false);
+
+    useEffect(() => {
+        const checkSize = () => setIsLarge(window.innerWidth >= 1024);
+        checkSize();
+        window.addEventListener('resize', checkSize);
+        return () => window.removeEventListener('resize', checkSize);
+    }, []);
+
+    const innerRadius = isLarge ? 320 : 120;
+    const outerRadius = isLarge ? 480 : 220;
+    const innerIconSize = isLarge ? 40 : 30;
+    const outerIconSize = isLarge ? 50 : 40;
+    const innerPadding = isLarge ? 'p-3' : 'p-2';
+    const outerPadding = isLarge ? 'p-4' : 'p-3';
+    const innerIconClass = isLarge ? 'w-6 h-6' : 'w-4 h-4';
+    const outerIconClass = isLarge ? 'w-8 h-8' : 'w-6 h-6';
+    const bgInner = isLarge ? 'w-[640px] h-[640px]' : 'w-[240px] h-[240px]';
+    const bgOuter = isLarge ? 'w-[1000px] h-[1000px]' : 'w-[440px] h-[440px]';
 
     const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
@@ -59,52 +78,51 @@ const Hero = () => {
             
             {/* Background Concentric Circles (Visible Orbits) */}
             <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
-                <div className="rounded-full border border-gray-200/60 w-[640px] h-[640px]" />
-                <div className="absolute rounded-full border border-gray-200/60 w-[1000px] h-[1000px]" />
+                <div className={`rounded-full border border-gray-200/60 ${bgInner}`} />
+                <div className={`absolute rounded-full border border-gray-200/60 ${bgOuter}`} />
             </div>
 
             {/* Orbiting Elements */}
             <div className="absolute inset-0 flex items-center justify-center pointer-events-none mb-0 lg:mb-0">
                 
                 {/* Inner Ring */}
-                <OrbitingCircles iconSize={40} radius={320} speed={1.2} delay={0} path={false}>
-                    <div className="p-3 bg-white rounded-full shadow-lg border border-gray-100">
-                         <Icons.insta className="w-6 h-6 text-pink-600" />
+                <OrbitingCircles iconSize={innerIconSize} radius={innerRadius} speed={1.2} delay={0} path={false}>
+                    <div className={`bg-white rounded-full shadow-lg border border-gray-100 ${innerPadding}`}>
+                         <Icons.insta className={`${innerIconClass} text-pink-600`} />
                     </div>
                 </OrbitingCircles>
-                <OrbitingCircles iconSize={40} radius={320} reverse speed={1.2} delay={10} path={false}>
-                    <div className="p-3 bg-white rounded-full shadow-lg border border-gray-100">
-                         <Icons.facebook className="w-6 h-6 text-blue-600" />
+                <OrbitingCircles iconSize={innerIconSize} radius={innerRadius} reverse speed={1.2} delay={10} path={false}>
+                    <div className={`bg-white rounded-full shadow-lg border border-gray-100 ${innerPadding}`}>
+                         <Icons.facebook className={`${innerIconClass} text-blue-600`} />
                     </div>
                 </OrbitingCircles>
-                 <OrbitingCircles iconSize={40} radius={320} speed={1.2} delay={20} path={false}>
-                     <div className="p-3 bg-white rounded-full shadow-lg border border-gray-100">
-                         <Icons.linkedin className="w-6 h-6 text-blue-700" />
+                 <OrbitingCircles iconSize={innerIconSize} radius={innerRadius} speed={1.2} delay={20} path={false}>
+                     <div className={`bg-white rounded-full shadow-lg border border-gray-100 ${innerPadding}`}>
+                         <Icons.linkedin className={`${innerIconClass} text-blue-700`} />
                     </div>
                 </OrbitingCircles>
-
 
                 {/* Outer Ring */}
-                <OrbitingCircles iconSize={50} radius={480} speed={0.8} delay={0} path={false}>
-                    <div className="p-4 bg-white rounded-full shadow-lg border border-gray-100">
-                         <Icons.youtube className="w-8 h-8 text-red-600" />
+                <OrbitingCircles iconSize={outerIconSize} radius={outerRadius} speed={0.8} delay={0} path={false}>
+                    <div className={`bg-white rounded-full shadow-lg border border-gray-100 ${outerPadding}`}>
+                         <Icons.youtube className={`${outerIconClass} text-red-600`} />
                     </div>
                 </OrbitingCircles>
-                <OrbitingCircles iconSize={50} radius={480} reverse speed={0.8} delay={15} path={false}>
-                     <div className="p-4 bg-white rounded-full shadow-lg border border-gray-100">
-                         <Icons.x className="w-8 h-8 text-black" />
+                <OrbitingCircles iconSize={outerIconSize} radius={outerRadius} reverse speed={0.8} delay={15} path={false}>
+                     <div className={`bg-white rounded-full shadow-lg border border-gray-100 ${outerPadding}`}>
+                         <Icons.x className={`${outerIconClass} text-black`} />
                     </div>
                 </OrbitingCircles>
-                <OrbitingCircles iconSize={50} radius={480} speed={0.8} delay={30} path={false}>
-                    <div className="p-4 bg-white rounded-full shadow-lg border border-gray-100">
-                        <Icons.instagram className="w-8 h-8 text-pink-600" />
+                <OrbitingCircles iconSize={outerIconSize} radius={outerRadius} speed={0.8} delay={30} path={false}>
+                    <div className={`bg-white rounded-full shadow-lg border border-gray-100 ${outerPadding}`}>
+                        <Icons.instagram className={`${outerIconClass} text-pink-600`} />
                     </div>
                 </OrbitingCircles>
 
             </div>
 
             {/* Content */}
-            <div className="flex flex-col items-center justify-center gap-y-6 relative z-10 px-4 mt-0 transform -translate-y-4">
+            <div className="flex flex-col items-center justify-center gap-y-6 relative z-10 px-4 mt-0 transform -translate-y-6 lg:-translate-y-4">
 
                 <div className="flex flex-col items-center justify-center text-center gap-y-6">
                     <Container delay={0.1}>
