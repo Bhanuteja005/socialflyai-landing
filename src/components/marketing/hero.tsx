@@ -74,7 +74,7 @@ const Hero = () => {
     };
 
     return (
-        <div className="relative flex flex-col items-center justify-center w-full py-0 lg:py-4 min-h-[80vh] lg:min-h-[90vh] overflow-visible bg-transparent">
+        <div className="relative flex flex-col items-center justify-center w-full py-0 lg:py-4 min-h-[70vh] lg:min-h-[90vh] overflow-visible bg-transparent">
             
             {/* Background Concentric Circles (Visible Orbits) */}
             <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
@@ -122,7 +122,7 @@ const Hero = () => {
             </div>
 
             {/* Content */}
-            <div className="flex flex-col items-center justify-center gap-y-6 relative z-10 px-4 mt-0 transform -translate-y-6 lg:-translate-y-4">
+            <div className="flex flex-col items-center justify-center gap-y-6 relative z-10 px-4 mt-0 transform -translate-y-10 lg:-translate-y-4">
 
                 <div className="flex flex-col items-center justify-center text-center gap-y-6">
                     <Container delay={0.1}>
