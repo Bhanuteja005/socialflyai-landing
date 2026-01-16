@@ -31,16 +31,16 @@ const Hero = () => {
         return () => window.removeEventListener('resize', checkSize);
     }, []);
 
-    const innerRadius = isLarge ? 320 : 120;
-    const outerRadius = isLarge ? 480 : 220;
+    const innerRadius = isLarge ? 320 : 150;
+    const outerRadius = isLarge ? 480 : 250;
     const innerIconSize = isLarge ? 40 : 30;
     const outerIconSize = isLarge ? 50 : 40;
     const innerPadding = isLarge ? 'p-3' : 'p-2';
     const outerPadding = isLarge ? 'p-4' : 'p-3';
     const innerIconClass = isLarge ? 'w-6 h-6' : 'w-4 h-4';
     const outerIconClass = isLarge ? 'w-8 h-8' : 'w-6 h-6';
-    const bgInner = isLarge ? 'w-[640px] h-[640px]' : 'w-[240px] h-[240px]';
-    const bgOuter = isLarge ? 'w-[1000px] h-[1000px]' : 'w-[440px] h-[440px]';
+    const bgInner = isLarge ? 'w-[640px] h-[640px]' : 'w-[300px] h-[300px]';
+    const bgOuter = isLarge ? 'w-[1000px] h-[1000px]' : 'w-[500px] h-[500px]';
 
     const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
@@ -74,7 +74,7 @@ const Hero = () => {
     };
 
     return (
-        <div className="relative flex flex-col items-center justify-center w-full py-0 lg:py-4 min-h-[70vh] lg:min-h-[90vh] overflow-visible bg-transparent">
+        <div className="relative flex flex-col items-center justify-center w-full py-0 lg:py-4 min-h-[80vh] lg:min-h-[90vh] overflow-x-hidden lg:overflow-visible bg-transparent">
             
             {/* Background Concentric Circles (Visible Orbits) */}
             <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
@@ -85,6 +85,8 @@ const Hero = () => {
             {/* Orbiting Elements */}
             <div className="absolute inset-0 flex items-center justify-center pointer-events-none mb-0 lg:mb-0">
                 
+                {isLarge && (
+                <>
                 {/* Inner Ring */}
                 <OrbitingCircles iconSize={innerIconSize} radius={innerRadius} speed={1.2} delay={0} path={false}>
                     <div className={`bg-white rounded-full shadow-lg border border-gray-100 ${innerPadding}`}>
@@ -101,6 +103,8 @@ const Hero = () => {
                          <Icons.linkedin className={`${innerIconClass} text-blue-700`} />
                     </div>
                 </OrbitingCircles>
+                </>
+                )}
 
                 {/* Outer Ring */}
                 <OrbitingCircles iconSize={outerIconSize} radius={outerRadius} speed={0.8} delay={0} path={false}>
@@ -108,21 +112,36 @@ const Hero = () => {
                          <Icons.youtube className={`${outerIconClass} text-red-600`} />
                     </div>
                 </OrbitingCircles>
-                <OrbitingCircles iconSize={outerIconSize} radius={outerRadius} reverse speed={0.8} delay={15} path={false}>
+                <OrbitingCircles iconSize={outerIconSize} radius={outerRadius} reverse speed={0.8} delay={5} path={false}>
                      <div className={`bg-white rounded-full shadow-lg border border-gray-100 ${outerPadding}`}>
                          <Icons.x className={`${outerIconClass} text-black`} />
                     </div>
                 </OrbitingCircles>
-                <OrbitingCircles iconSize={outerIconSize} radius={outerRadius} speed={0.8} delay={30} path={false}>
+                {isLarge ? (
+                <OrbitingCircles iconSize={outerIconSize} radius={outerRadius} speed={0.8} delay={10} path={false}>
                     <div className={`bg-white rounded-full shadow-lg border border-gray-100 ${outerPadding}`}>
                         <Icons.instagram className={`${outerIconClass} text-pink-600`} />
                     </div>
                 </OrbitingCircles>
+                ) : (
+                <OrbitingCircles iconSize={outerIconSize} radius={outerRadius} speed={0.8} delay={10} path={false}>
+                    <div className={`bg-white rounded-full shadow-lg border border-gray-100 ${outerPadding}`}>
+                        <Icons.linkedin className={`${outerIconClass} text-blue-700`} />
+                    </div>
+                </OrbitingCircles>
+                )}
+                {!isLarge && (
+                <OrbitingCircles iconSize={outerIconSize} radius={outerRadius} speed={0.8} delay={15} path={false}>
+                    <div className={`bg-white rounded-full shadow-lg border border-gray-100 ${outerPadding}`}>
+                        <Icons.facebook className={`${outerIconClass} text-blue-600`} />
+                    </div>
+                </OrbitingCircles>
+                )}
 
             </div>
 
             {/* Content */}
-            <div className="flex flex-col items-center justify-center gap-y-6 relative z-10 px-4 mt-0 transform -translate-y-10 lg:-translate-y-4">
+            <div className="flex flex-col items-center justify-center gap-y-6 relative z-10 px-4 pt-4 lg:pt-0 mt-0 transform -translate-y-10 lg:-translate-y-4">
 
                 <div className="flex flex-col items-center justify-center text-center gap-y-6">
                     <Container delay={0.1}>

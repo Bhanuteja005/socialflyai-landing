@@ -83,10 +83,14 @@ const Integration = () => {
     return (
         <div className="relative flex flex-col items-center justify-center w-full py-20 overflow-x-hidden">
 
-            {/* Section heading / tagline */}
-            <div className="w-full text-center mb-8">
-                <h2 className="text-2xl md:text-3xl font-bold">Social Media Integration</h2>
-            </div>
+             <Container>
+                <div className="flex flex-col items-center text-center max-w-2xl mx-auto">
+                    <h2 className="text-2xl md:text-4xl lg:text-5xl font-heading font-medium !leading-snug mt-6 text-gray-900">
+                        Social Media Integration 
+                    </h2>
+                    
+                </div>
+            </Container>
 
             <Container className="relative">
                 <div className="relative flex flex-col lg:hidden items-center justify-center overflow-hidden">
