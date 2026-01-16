@@ -90,7 +90,7 @@ const Hero = () => {
                 {/* Inner Ring */}
                 <OrbitingCircles iconSize={innerIconSize} radius={innerRadius} speed={1.2} delay={0} path={false}>
                     <div className={`bg-white rounded-full shadow-lg border border-gray-100 ${innerPadding}`}>
-                         <Icons.insta className={`${innerIconClass} text-pink-600`} />
+                         <Icons.threads className={`${innerIconClass} text-black`} />
                     </div>
                 </OrbitingCircles>
                 <OrbitingCircles iconSize={innerIconSize} radius={innerRadius} reverse speed={1.2} delay={10} path={false}>
@@ -124,18 +124,18 @@ const Hero = () => {
                     </div>
                 </OrbitingCircles>
                 ) : (
+                <>
                 <OrbitingCircles iconSize={outerIconSize} radius={outerRadius} speed={0.8} delay={10} path={false}>
                     <div className={`bg-white rounded-full shadow-lg border border-gray-100 ${outerPadding}`}>
                         <Icons.linkedin className={`${outerIconClass} text-blue-700`} />
                     </div>
                 </OrbitingCircles>
-                )}
-                {!isLarge && (
                 <OrbitingCircles iconSize={outerIconSize} radius={outerRadius} speed={0.8} delay={15} path={false}>
                     <div className={`bg-white rounded-full shadow-lg border border-gray-100 ${outerPadding}`}>
                         <Icons.facebook className={`${outerIconClass} text-blue-600`} />
                     </div>
                 </OrbitingCircles>
+                </>
                 )}
 
             </div>

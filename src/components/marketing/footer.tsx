@@ -17,7 +17,7 @@ const Footer = () => {
                                 height={96}
                                 className="w-20 h-20 rounded-full object-cover"
                             />
-                            <span className="ml-2 text-lg font-semibold text-gray-900">Socialflyai</span>
+                            <span className="text-lg font-semibold text-gray-900 leading-none -ml-6">Socialflyai</span>
                         </Link>
                     </div>
 
