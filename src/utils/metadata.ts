@@ -16,19 +16,12 @@ interface MetadataProps {
 }
 
 export const generateMetadata = ({
-    title = `Socialflyai - AI-Powered Project Management & Team Collaboration`,
-    description = `Socialflyai is an intelligent project management platform that transforms how teams work together. Leverage AI to automate workflows, enhance collaboration, and boost productivity. Experience smarter project management today.`,
+    title = `Socialflyai - AI-Powered Social Media Management Platform`,
+    description = `Socialflyai is an intelligent social media management platform that transforms how teams work together. Leverage AI to automate workflows, enhance collaboration, and boost productivity. Experience smarter social media management today.`,
     icons = [
-        {
-            rel: "icon",
-            url: "/icons/icon-dark.png",
-            media: "(prefers-color-scheme: light)",
-        },
-        {
-            rel: "icon",
-            url: "/icons/icon.png",
-            media: "(prefers-color-scheme: dark)",
-        },
+        { rel: "icon", url: "/images/logo1.png", sizes: "256x256", type: "image/png" },
+        { rel: "icon", url: "/images/logo1.png", sizes: "512x512", type: "image/png" },
+        { rel: "apple-touch-icon", url: "/images/logo1.png", sizes: "180x180", type: "image/png" },
     ],
     noIndex = false,
     keywords = [
