@@ -107,11 +107,6 @@ const Hero = () => {
                 )}
 
                 {/* Outer Ring */}
-                <OrbitingCircles iconSize={outerIconSize} radius={outerRadius} speed={0.8} delay={0} path={false}>
-                    <div className={`bg-white rounded-full shadow-lg border border-gray-100 ${outerPadding}`}>
-                         <Icons.youtube className={`${outerIconClass} text-red-600`} />
-                    </div>
-                </OrbitingCircles>
                 <OrbitingCircles iconSize={outerIconSize} radius={outerRadius} reverse speed={0.8} delay={5} path={false}>
                      <div className={`bg-white rounded-full shadow-lg border border-gray-100 ${outerPadding}`}>
                          <Icons.x className={`${outerIconClass} text-black`} />

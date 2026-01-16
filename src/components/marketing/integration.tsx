@@ -9,10 +9,10 @@ import { Button } from "../ui/button";
 import Ripple from "../ui/ripple";
 
 const SOCIAL_PLATFORMS = [
-    { icon: Icons.linkedin, position: "left-3", size: "small", iconSize: "small", className: "hidden lg:flex", color: "text-blue-600" },
+    { icon: Icons.youtube, position: "left-3", size: "small", iconSize: "small", className: "hidden lg:flex", color: "text-blue-600" },
     { icon: Icons.tiktok, position: "left-2", size: "medium", iconSize: "medium", color: "text-black" },
     { icon: Icons.insta, position: "left-1", size: "large", iconSize: "large", color: "text-pink-600" },
-    { icon: Icons.youtube, position: "right-1", size: "large", iconSize: "large", color: "text-red-600" },
+    { icon: Icons.linkedin, position: "right-1", size: "large", iconSize: "large", color: "text-blue-600" },
     { icon: Icons.x, position: "right-2", size: "medium", iconSize: "medium", color: "text-black" },
     { icon: Icons.facebook, position: "right-3", size: "small", iconSize: "small", className: "hidden lg:flex", color: "text-blue-600" }
 ];
@@ -114,8 +114,8 @@ const Integration = () => {
 
                         {/* icons flanking the logo (mobile): left 3, logo, right 3 */}
                         <div className="absolute z-20 inset-0 flex items-center justify-center lg:hidden">
-                            <div className="flex items-center justify-center gap-6 w-full max-w-[760px] px-4">
-                                <div className="flex items-center gap-3">
+                            <div className="flex items-center justify-center gap-12 w-full max-w-[760px] px-4">
+                                <div className="flex items-center gap-6">
                                     {SOCIAL_PLATFORMS.slice(0, 3).map((platform, i) => (
                                         <div key={i} className={cn("flex items-center justify-center rounded-full bg-white shadow-xl shadow-black/10 border border-gray-100", getMobileSizeClasses(platform.size))}>
                                             <platform.icon className={cn(getMobileIconSizeClasses(platform.iconSize), platform.color)} />
@@ -123,11 +123,11 @@ const Integration = () => {
                                     ))}
                                 </div>
 
-                                <div className="mx-2">
+                                <div className="mx-4">
                                     <Image src="/images/logo1.png" alt="Socialfly Logo" width={96} height={96} className="w-20 h-20 rounded-full object-cover transition-all duration-500 shadow-xl" />
                                 </div>
 
-                                <div className="flex items-center gap-3">
+                                <div className="flex items-center gap-6">
                                     {SOCIAL_PLATFORMS.slice(3).map((platform, i) => (
                                         <div key={i} className={cn("flex items-center justify-center rounded-full bg-white shadow-xl shadow-black/10 border border-gray-100", getMobileSizeClasses(platform.size))}>
                                             <platform.icon className={cn(getMobileIconSizeClasses(platform.iconSize), platform.color)} />
