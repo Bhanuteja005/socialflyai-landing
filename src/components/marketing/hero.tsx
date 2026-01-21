@@ -190,6 +190,16 @@ const Hero = () => {
                             </div>
                         </form>
                         
+                        <div className="flex items-center justify-center gap-4 mt-4 text-sm text-gray-600">
+                            <Link href="/privacy-policy" className="hover:text-gray-900 underline">
+                                Privacy Policy
+                            </Link>
+                            <span className="text-gray-400">|</span>
+                            <Link href="/terms-and-conditions" className="hover:text-gray-900 underline">
+                                Terms of Service
+                            </Link>
+                        </div>
+                        
                     </Container>
 
                    
